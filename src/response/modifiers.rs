@@ -136,6 +136,8 @@ impl Bodyable for Path {
 /// A modifier for setting the status of a response.
 pub struct Status(pub status::Status);
 
+impl Copy for Status { }
+
 impl Modifier<Response> for Status {
     fn modify(self, res: &mut Response) {
         let Status(status) = self;
